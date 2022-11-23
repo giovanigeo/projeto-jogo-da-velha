@@ -32,6 +32,7 @@ public class GameApp {
 			
 			vencedor = tabuleiro.horizontalVelha();
 			vencedor = tabuleiro.verticalVelha();
+			vencedor = tabuleiro.diagonalEsq();
 			
 			for(int i=0; i<tabuleiro.getTabuleiro().length; i++) {
 				for(int j=0; j<tabuleiro.getTabuleiro().length; j++) {

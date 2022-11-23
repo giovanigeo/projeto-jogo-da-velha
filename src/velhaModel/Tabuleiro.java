@@ -63,8 +63,17 @@ public class Tabuleiro implements VelhaInterface{
 
 	@Override
 	public Boolean diagonalEsq() {
-		// TODO Auto-generated method stub
-		return null;
+
+		int n=0;
+		for(int j=0; j<tabuleiro.length; j++) {
+			if(tabuleiro[j][j].charAt(0) == 'x') {
+				n++;
+				if(n == 3) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	@Override
