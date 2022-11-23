@@ -32,7 +32,6 @@ public class Tabuleiro implements VelhaInterface{
 				if(tabuleiro[i][j].charAt(0) == jogador.getJogador().charAt(0)) {
 					
 					n++;
-					System.out.println(n);
 					if(n == 3) {
 						return true;
 					}
@@ -101,6 +100,23 @@ public class Tabuleiro implements VelhaInterface{
 				
 			}
 		}
+	}
+
+	@Override
+	public void tabuleiroGanhador(Jogador jogador) {
+
+		for(int i=0; i<tabuleiro.length; i++) {
+			for(int j=0; j<tabuleiro.length; j++) {
+				if(tabuleiro[i][j].charAt(0) != jogador.getJogador().charAt(0)) {
+					tabuleiro[i][j] = "-";
+				}
+				
+				if(tabuleiro[i][j].charAt(0) == jogador.getJogador().charAt(0)) {
+					tabuleiro[i][j] = jogador.getJogador();
+				}
+			}
+		}
+		
 	}
 	
 }

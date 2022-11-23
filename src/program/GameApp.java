@@ -65,8 +65,20 @@ public class GameApp {
 			}
 			
 		}
+		System.out.println("VENCEDOR!!!");
+		System.out.println("Jogo terminou! Ganhador foi "+ jogador.getJogador());
+		System.out.println();
 		
-		System.out.println("Jogo terminou! ");
+		tabuleiro.tabuleiroGanhador(jogador);
+		
+		for(int i=0; i<tabuleiro.getTabuleiro().length; i++) {
+			for(int j=0; j<tabuleiro.getTabuleiro().length; j++) {
+				System.out.print(" "+tabuleiro.getTabuleiro()[i][j]);
+			}
+			System.out.println();
+		}
+		
+		
 		sc.close();
 		
 	}

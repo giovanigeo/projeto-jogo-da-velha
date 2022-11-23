@@ -13,4 +13,6 @@ public interface VelhaInterface {
 	public Boolean diagonalDir(Jogador jogador);
 	
 	public void tabuleiroLinha();
+	
+	public void tabuleiroGanhador(Jogador jogador);
 }
