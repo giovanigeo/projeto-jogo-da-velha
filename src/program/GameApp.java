@@ -23,7 +23,12 @@ public class GameApp {
 			int coluna = sc.nextInt();
 			System.out.print("Jogada: ");
 			jogador.setJogador(sc.next());
-			tabuleiro.getTabuleiro()[linha][coluna] = jogador.getJogador();
+			
+			if(tabuleiro.getTabuleiro()[linha][coluna].charAt(0) == '-') {				
+				tabuleiro.getTabuleiro()[linha][coluna] = jogador.getJogador();
+			}else {
+				System.out.println("Jogada não pode ser feita. Tente novamento!");
+			}
 			
 			vencedor = tabuleiro.horizontalVelha();
 			vencedor = tabuleiro.verticalVelha();
