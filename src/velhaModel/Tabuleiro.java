@@ -78,8 +78,17 @@ public class Tabuleiro implements VelhaInterface{
 
 	@Override
 	public Boolean diagonalDir() {
-		// TODO Auto-generated method stub
-		return null;
+		int n=0;
+		for(int i=0; i<tabuleiro.length; i++) {
+			if(tabuleiro[i][tabuleiro.length-1-i].charAt(0) == 'x') {
+				n++;
+				if(n == 3) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
 	}
 
 	@Override
