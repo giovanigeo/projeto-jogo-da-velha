@@ -13,7 +13,7 @@ public class GameApp {
 				
 		Boolean vencedor = false;
 		
-		tabuleiro.tabu();
+		tabuleiro.tabuleiroLinha();
 		while(vencedor != true) {
 			
 			System.out.print("Linha: ");
@@ -25,7 +25,8 @@ public class GameApp {
 			jogador.setJogador(sc.next());
 			tabuleiro.getTabuleiro()[linha][coluna] = jogador.getJogador();
 			
-			vencedor = tabuleiro.horizontaVelha();
+			vencedor = tabuleiro.horizontalVelha();
+			vencedor = tabuleiro.verticalVelha();
 			
 			for(int i=0; i<tabuleiro.getTabuleiro().length; i++) {
 				for(int j=0; j<tabuleiro.getTabuleiro().length; j++) {

@@ -2,7 +2,7 @@ package velhaInterface;
 
 public interface VelhaInterface {
 
-	public Boolean horizontaVelha();
+	public Boolean horizontalVelha();
 	
 	public Boolean verticalVelha();
 	
@@ -10,5 +10,5 @@ public interface VelhaInterface {
 	
 	public Boolean diagonalDir();
 	
-	public void tabu();
+	public void tabuleiroLinha();
 }

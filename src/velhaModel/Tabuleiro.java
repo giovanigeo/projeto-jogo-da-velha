@@ -22,7 +22,7 @@ public class Tabuleiro implements VelhaInterface{
 	}
 
 	@Override
-	public Boolean horizontaVelha() {
+	public Boolean horizontalVelha() {
 
 		for(int i=0; i<tabuleiro.length; i++) {
 			int n = 0;
@@ -45,9 +45,20 @@ public class Tabuleiro implements VelhaInterface{
 	@Override
 	public Boolean verticalVelha() {
 
+		for(int i=0; i<tabuleiro.length; i++) {
+			int n=0;
+			for(int j=0; j<tabuleiro.length; j++) {
+				if(tabuleiro[j][i].charAt(0) == 'x') {
+					
+					n++;
+					if(n == 3) {
+						return true;
+					}
+				}
+			}
+		}
 		
-		
-		return null;
+		return false;
 	}
 
 	@Override
@@ -63,7 +74,7 @@ public class Tabuleiro implements VelhaInterface{
 	}
 
 	@Override
-	public void tabu() {
+	public void tabuleiroLinha() {
 
 		for(int i=0; i<tabuleiro.length; i++) {
 			for(int j=0; j<tabuleiro.length; j++) {
