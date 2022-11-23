@@ -30,11 +30,10 @@ public class Tabuleiro implements VelhaInterface{
 				if(tabuleiro[i][j].charAt(0) == 'x') {
 					
 					n++;
+					System.out.println(n);
 					if(n == 3) {
-						
 						return true;
 					}
-					
 				}
 			}
 		}

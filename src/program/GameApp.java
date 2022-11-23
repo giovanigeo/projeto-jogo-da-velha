@@ -12,6 +12,10 @@ public class GameApp {
 		Jogador jogador = new Jogador();
 				
 		Boolean vencedor = false;
+		Boolean horizontal = false;
+		Boolean vertical = false;
+		Boolean diagonalEsq = false;
+		Boolean diagonalDir = false;
 		
 		tabuleiro.tabuleiroLinha();
 		while(vencedor != true) {
@@ -26,14 +30,29 @@ public class GameApp {
 			
 			if(tabuleiro.getTabuleiro()[linha][coluna].charAt(0) == '-') {				
 				tabuleiro.getTabuleiro()[linha][coluna] = jogador.getJogador();
+				
+				horizontal = tabuleiro.horizontalVelha();
+				vertical = tabuleiro.verticalVelha();
+				diagonalEsq = tabuleiro.diagonalEsq();
+				diagonalDir = tabuleiro.diagonalDir();
+				
 			}else {
 				System.out.println("Jogada não pode ser feita. Tente novamento!");
 			}
 			
-			vencedor = tabuleiro.horizontalVelha();
-			vencedor = tabuleiro.verticalVelha();
-			vencedor = tabuleiro.diagonalEsq();
-			vencedor = tabuleiro.diagonalDir();
+			if(horizontal == true) {
+				vencedor = horizontal;
+			}
+			if(vertical == true) {
+				vencedor = vertical;
+			}
+			if(diagonalEsq == true) {
+				vencedor = diagonalEsq;
+			}
+			if(diagonalDir == true) {
+				vencedor = diagonalDir;
+			}
+			
 			
 			for(int i=0; i<tabuleiro.getTabuleiro().length; i++) {
 				for(int j=0; j<tabuleiro.getTabuleiro().length; j++) {
