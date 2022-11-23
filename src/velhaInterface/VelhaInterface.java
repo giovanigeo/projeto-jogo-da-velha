@@ -1,14 +1,16 @@
 package velhaInterface;
 
+import velhaModel.Jogador;
+
 public interface VelhaInterface {
 
-	public Boolean horizontalVelha();
+	public Boolean horizontalVelha(Jogador jogador);
 	
-	public Boolean verticalVelha();
+	public Boolean verticalVelha(Jogador jogador);
 	
-	public Boolean diagonalEsq();
+	public Boolean diagonalEsq(Jogador jogador);
 	
-	public Boolean diagonalDir();
+	public Boolean diagonalDir(Jogador jogador);
 	
 	public void tabuleiroLinha();
 }

@@ -17,24 +17,27 @@ public class GameApp {
 		Boolean diagonalEsq = false;
 		Boolean diagonalDir = false;
 		
+		
 		tabuleiro.tabuleiroLinha();
 		while(vencedor != true) {
-			
+			System.out.print("Qual jogador você deseja x/o? Digite o jogador: ");
+			jogador.setJogador(sc.next());
+			System.out.println("JOGADOR "+ jogador.getJogador());
+						
 			System.out.print("Linha: ");
 			int linha = sc.nextInt();
 			
 			System.out.print("Coluna: ");
 			int coluna = sc.nextInt();
-			System.out.print("Jogada: ");
-			jogador.setJogador(sc.next());
+			
 			
 			if(tabuleiro.getTabuleiro()[linha][coluna].charAt(0) == '-') {				
 				tabuleiro.getTabuleiro()[linha][coluna] = jogador.getJogador();
 				
-				horizontal = tabuleiro.horizontalVelha();
-				vertical = tabuleiro.verticalVelha();
-				diagonalEsq = tabuleiro.diagonalEsq();
-				diagonalDir = tabuleiro.diagonalDir();
+				horizontal = tabuleiro.horizontalVelha(jogador);
+				vertical = tabuleiro.verticalVelha(jogador);
+				diagonalEsq = tabuleiro.diagonalEsq(jogador);
+				diagonalDir = tabuleiro.diagonalDir(jogador);
 				
 			}else {
 				System.out.println("Jogada não pode ser feita. Tente novamento!");
