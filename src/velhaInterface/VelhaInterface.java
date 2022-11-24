@@ -15,4 +15,6 @@ public interface VelhaInterface {
 	public void tabuleiroLinha();
 	
 	public void tabuleiroGanhador(Jogador jogador);
+	
+	public Boolean velha();
 }

@@ -31,7 +31,7 @@ public class GameApp {
 						jogador.getJogador().charAt(0) == 'o' | jogador.getJogador().charAt(0) == 'O') {
 					validacaoJ = true;
 				}else {
-					System.out.println("Jogada invalida. Tente novamente: ");
+					System.out.print("Jogada invalida. Tente novamente x/o: ");
 					jogador.setJogador(sc.next());
 					validacaoJ = false;
 				}
@@ -81,6 +81,15 @@ public class GameApp {
 					System.out.print(" "+tabuleiro.getTabuleiro()[i][j]);
 				}
 				System.out.println();
+			}
+			
+			if(vencedor != true) {
+				vencedor = tabuleiro.velha();
+				if(vencedor == true) {
+					vencedor = false;
+					System.out.println("Deu velha!!!");
+					tabuleiro.tabuleiroLinha();
+				}
 			}
 			
 		}

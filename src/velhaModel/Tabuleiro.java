@@ -118,5 +118,23 @@ public class Tabuleiro implements VelhaInterface{
 		}
 		
 	}
+
+	@Override
+	public Boolean velha() {
+
+		int n = 0;
+		for(int i=0; i<tabuleiro.length; i++) {
+			for(int j=0; j<tabuleiro.length; j++) {
+				if(tabuleiro[i][j].charAt(0) != '-' ) {
+					
+					n++;
+					if(n == 9) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
 	
 }
