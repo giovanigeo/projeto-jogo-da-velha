@@ -97,9 +97,7 @@ public class GameApp {
 		System.out.println("### VENCEDOR!!! ###");
 		System.out.println("Ganhador foi: "+ jogador.getJogador());
 		System.out.println();
-		
-		tabuleiro.tabuleiroGanhador(jogador);
-		
+				
 		for(int i=0; i<tabuleiro.getTabuleiro().length; i++) {
 			for(int j=0; j<tabuleiro.getTabuleiro().length; j++) {
 				System.out.print(" "+tabuleiro.getTabuleiro()[i][j]);
