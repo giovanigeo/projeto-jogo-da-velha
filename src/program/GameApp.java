@@ -20,16 +20,30 @@ public class GameApp {
 		
 		tabuleiro.tabuleiroLinha();
 		while(vencedor != true) {
+			Boolean validacaoJ = false;
+			
 			System.out.print("Qual jogador você deseja x/o? Digite o jogador: ");
 			jogador.setJogador(sc.next());
-			System.out.println("JOGADOR "+ jogador.getJogador());
 						
+			while(validacaoJ != true) {
+				System.out.println();
+				System.out.println("Jogada invalida. Tente novamente: ");
+				jogador.setJogador(sc.next());
+				
+				if(jogador.getJogador().charAt(0) == 'x' | jogador.getJogador().charAt(0) == 'X' | 
+						jogador.getJogador().charAt(0) == 'o' | jogador.getJogador().charAt(0) == 'O') {
+					validacaoJ = true;
+				}else {
+					validacaoJ = false;
+				}
+			}
+			
+			System.out.println("JOGADOR "+ jogador.getJogador());
 			System.out.print("Linha: ");
 			int linha = sc.nextInt();
 			
 			System.out.print("Coluna: ");
-			int coluna = sc.nextInt();
-			
+			int coluna = sc.nextInt();			
 			
 			if(tabuleiro.getTabuleiro()[linha][coluna].charAt(0) == '-') {				
 				tabuleiro.getTabuleiro()[linha][coluna] = jogador.getJogador();
@@ -40,7 +54,7 @@ public class GameApp {
 				diagonalDir = tabuleiro.diagonalDir(jogador);
 				
 			}else {
-				System.out.println("Jogada não pode ser feita. Tente novamento!");
+				System.out.println("Jogada já existe, não pode ser feita. Tente novamento!");
 			}
 			
 			if(horizontal == true) {
@@ -65,8 +79,9 @@ public class GameApp {
 			}
 			
 		}
-		System.out.println("VENCEDOR!!!");
-		System.out.println("Jogo terminou! Ganhador foi "+ jogador.getJogador());
+		System.out.println();
+		System.out.println("### VENCEDOR!!! ###");
+		System.out.println("Ganhador foi: "+ jogador.getJogador());
 		System.out.println();
 		
 		tabuleiro.tabuleiroGanhador(jogador);
