@@ -26,36 +26,41 @@ public class GameApp {
 			jogador.setJogador(sc.next());
 						
 			while(validacaoJ != true) {
-				System.out.println();
-				System.out.println("Jogada invalida. Tente novamente: ");
-				jogador.setJogador(sc.next());
 				
 				if(jogador.getJogador().charAt(0) == 'x' | jogador.getJogador().charAt(0) == 'X' | 
 						jogador.getJogador().charAt(0) == 'o' | jogador.getJogador().charAt(0) == 'O') {
 					validacaoJ = true;
 				}else {
+					System.out.println("Jogada invalida. Tente novamente: ");
+					jogador.setJogador(sc.next());
 					validacaoJ = false;
 				}
 			}
 			
 			System.out.println("JOGADOR "+ jogador.getJogador());
 			System.out.print("Linha: ");
+			
 			int linha = sc.nextInt();
 			
 			System.out.print("Coluna: ");
 			int coluna = sc.nextInt();			
-			
-			if(tabuleiro.getTabuleiro()[linha][coluna].charAt(0) == '-') {				
-				tabuleiro.getTabuleiro()[linha][coluna] = jogador.getJogador();
+			try {
 				
-				horizontal = tabuleiro.horizontalVelha(jogador);
-				vertical = tabuleiro.verticalVelha(jogador);
-				diagonalEsq = tabuleiro.diagonalEsq(jogador);
-				diagonalDir = tabuleiro.diagonalDir(jogador);
-				
-			}else {
-				System.out.println("Jogada já existe, não pode ser feita. Tente novamento!");
+				if(tabuleiro.getTabuleiro()[linha][coluna].charAt(0) == '-') {				
+					tabuleiro.getTabuleiro()[linha][coluna] = jogador.getJogador();
+					
+					horizontal = tabuleiro.horizontalVelha(jogador);
+					vertical = tabuleiro.verticalVelha(jogador);
+					diagonalEsq = tabuleiro.diagonalEsq(jogador);
+					diagonalDir = tabuleiro.diagonalDir(jogador);
+					
+				}else {
+					System.out.println("Jogada já existe, não pode ser feita. Tente novamento!");
+				}
+			}catch(Exception e) {
+				System.out.println("Linha ou coluna ivalida: " + e.getMessage());
 			}
+			
 			
 			if(horizontal == true) {
 				vencedor = horizontal;
